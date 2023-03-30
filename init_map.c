@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 14:53:11 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/03/30 17:01:10 by jpelaez-         ###   ########.fr       */
+/*   Created: 2023/03/30 15:11:55 by jpelaez-          #+#    #+#             */
+/*   Updated: 2023/03/30 17:22:35 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+static int	check_file(int argc, char *argument)
 {
-	t_list	game;
+	if (argc < 2)
+		return (0);
+	if (!ft_strstr(argument[1], ".ber"))
+		return (0);
+	return (1);
+}
 
-	if (!init_map(&game, argc, argv))
-		exit(1);
+static int	read_map(t_list *game, char *file)
+{
+	game->fd = open(file[1], O_RDONLY);
+	if (game->fd == -1)
+		return (0);
+    
+}
+
+int	init_map(t_list *game, int argc, char **argv)
+{
+	char	**map;
+
+	if (!check_file(argc, argv[1]))
+		return (0);
+	if (!read_map(game, argv[1]))
+		return (0);
 }

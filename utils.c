@@ -1,21 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 14:53:11 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/03/30 17:01:10 by jpelaez-         ###   ########.fr       */
+/*   Created: 2023/03/30 16:40:01 by jpelaez-          #+#    #+#             */
+/*   Updated: 2023/03/30 16:43:30 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+int	ft_strstr(const char *big, const char *little)
 {
-	t_list	game;
+	size_t	i;
+	size_t	j;
 
-	if (!init_map(&game, argc, argv))
-		exit(1);
+	i = 0;
+	j = 0;
+	if (ft_strlen(little) == 0)
+		return (0);
+	while (*big != '\0')
+	{
+		if (*little == *big)
+		{
+			j = 1;
+			while (little[j] == big[j] && little[j] != '\0')
+			{
+				j++;
+			}
+			if (little[j] == '\0')
+				return (1);
+		}
+		big++;
+		i++;
+	}
+	return (0);
 }
