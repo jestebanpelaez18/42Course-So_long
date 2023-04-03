@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 14:53:11 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:01:29 by jpelaez-         ###   ########.fr       */
+/*   Created: 2023/03/31 18:23:08 by jpelaez-          #+#    #+#             */
+/*   Updated: 2023/03/31 18:24:50 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	error_msg(char *msg)
 {
-	t_list	game;
-
-	if (argc < 2)
-		error_msg("Error, number of arguments invalid");
-	init_map(&game, argc, argv);
+	ft_putendl_fd(msg, 2);
+	exit(1);
 }

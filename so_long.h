@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/03/30 17:03:46 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:01:26 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_list
 	char	**map;
 }			t_list;
 
-int			init_map(t_list *game, int argc, char **argv);
+void		init_map(t_list *game, int argc, char **argv);
 int			ft_strnstr(const char *big, const char *little, size_t len);
+
+void		error_msg(char *msg);
 #endif
