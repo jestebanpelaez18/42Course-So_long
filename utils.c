@@ -6,13 +6,13 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 16:40:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/03/30 16:43:30 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:31:19 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_strstr(const char *big, const char *little)
+int	ft_strstr(char *big, char *little)
 {
 	size_t	i;
 	size_t	j;

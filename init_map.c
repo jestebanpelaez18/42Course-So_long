@@ -6,13 +6,13 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:11:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/03 15:01:50 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:32:36 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	check_file(int argc, char *argument)
+static int	check_file(int argc, char **argument)
 {
 	if (!ft_strstr(argument[1], ".ber"))
 		return (0);
@@ -23,6 +23,7 @@ static char	**read_map(t_list *game, char *file)
 {
 	char	*line;
 	char	*full_map;
+	char	**final_map;
 
 	line = ft_strdup("");
 	full_map = ft_strdup("");
@@ -32,18 +33,20 @@ static char	**read_map(t_list *game, char *file)
 	while (1)
 	{
 		line = get_next_line(game->fd);
-		if (line == NULL)
+		if (line == NULL || line[0] == '\n')
 			break ;
 		full_map = ft_strjoin(full_map, line);
 	}
+	close(game->fd);
+	final_map = ft_split(full_map, '\n');
 	free(line);
-	full_map = ft_split(full_map, '\n');
-	return (full_map);
+	free(full_map);
+	return (final_map);
 }
 
 void	init_map(t_list *game, int argc, char **argv)
 {
-	if (!check_file(argc, argv[1]))
+	if (!check_file(argc, argv))
 		error_msg("Error, invalid file format");
 	game->map = read_map(game, argv[1]);
 }
