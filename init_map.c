@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:11:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/03 17:49:18 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:16:43 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,44 @@ static int	check_file(int argc, char **argument)
 		return (0);
 	return (1);
 }
-void	printList(t_list *node)
-{
-	int	i;
-	int	j;
+// void	printList(t_list *node)
+// {
+// 	int	i;
+// 	int	j;
 
-	i = 0;
-	j = 0;
-	while (node->map[i] != NULL)
-	{
-		while (node->map[j] != NULL)
-		{
-			printf("%c", node->map[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-		j = 0;
-	}
-}
+// 	i = 0;
+// 	j = 0;
+// 	while (node->map[i] != NULL)
+// 	{
+// 		j = 0;
+// 		while (node->map[i][j] != '\0')
+// 		{
+// 			printf("%c", node->map[i][j]);
+// 			j++;
+// 		}
+// 		printf("\n");
+// 		i++;
+// 	}
+// }
+
+// void	printList_2(char **node)
+// {
+// 	int	i;
+// 	int	j;
+
+// 	i = 0;
+// 	while (node[i] != NULL)
+// 	{
+// 		j = 0;
+// 		while (node[i][j] != '\0')
+// 		{
+// 			printf("%c", node[i][j]);
+// 			j++;
+// 		}
+// 		printf("\n");
+// 		i++;
+// 	}
+// }
 
 static char	**read_map(t_list *game, char *file)
 {
@@ -58,6 +77,8 @@ static char	**read_map(t_list *game, char *file)
 	}
 	close(game->fd);
 	final_map = ft_split(full_map, '\n');
+	// printList_2(final_map);
+	// printf("\n\n");
 	free(line);
 	free(full_map);
 	return (final_map);
@@ -68,5 +89,5 @@ void	init_map(t_list *game, int argc, char **argv)
 	if (!check_file(argc, argv))
 		error_msg("Error, invalid file format");
 	game->map = read_map(game, argv[1]);
-	printList(game);
+	// printList(game);
 }
