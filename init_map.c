@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:11:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/03 17:32:41 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:49:18 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,21 @@ static int	check_file(int argc, char **argument)
 void	printList(t_list *node)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	while (node->map[i] != NULL)
 	{
-		printf("%s", node->map[i]);
+		while (node->map[j] != NULL)
+		{
+			printf("%c", node->map[i][j]);
+			j++;
+		}
+		printf("\n");
 		i++;
+		j = 0;
 	}
-	printf("NULL \n\n");
 }
 
 static char	**read_map(t_list *game, char *file)
