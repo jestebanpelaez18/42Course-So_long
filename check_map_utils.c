@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   check_map_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/04 17:29:23 by jpelaez-         ###   ########.fr       */
+/*   Created: 2023/04/04 17:27:19 by jpelaez-          #+#    #+#             */
+/*   Updated: 2023/04/04 17:29:28 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	init_map(t_list *game)
+void get_height_weight(char **map)
 {
-	if (game->map == NULL)
-		error_msg("Error, empty map");
-	get_height_weight(game->map);
+    
 }
