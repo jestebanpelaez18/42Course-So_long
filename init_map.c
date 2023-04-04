@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:11:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/04 16:49:23 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:53:19 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ static char	**read_map(t_list *game, char *file)
 	free(full_map);
 	return (final_map);
 }
+
 void	init_map(t_list *game, int argc, char **argv)
 {
 	if (!check_file(argc, argv))
