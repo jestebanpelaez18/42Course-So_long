@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/03 16:31:35 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/04 15:09:50 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ int			main(int argc, char **argv);
 
 void		init_map(t_list *game, int argc, char **argv);
 void		error_msg(char *msg);
+void		free_argt(char **argument);
 #endif

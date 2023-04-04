@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:23:08 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/03/31 18:24:50 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/04 15:09:27 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,18 @@ void	error_msg(char *msg)
 {
 	ft_putendl_fd(msg, 2);
 	exit(1);
+}
+
+void	free_argt(char **argument)
+{
+	int	i;
+
+	i = 0;
+	while (argument[i])
+	{
+		free(argument[i]);
+		argument[i] = NULL;
+		i++;
+	}
+	free(argument);
 }
