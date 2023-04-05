@@ -6,13 +6,14 @@
 #    By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:34:21 by jpelaez-          #+#    #+#              #
-#    Updated: 2023/04/04 15:41:30 by jpelaez-         ###   ########.fr        #
+#    Updated: 2023/04/05 17:05:23 by jpelaez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long 
 
 SRC = main.c init_map.c utils.c error.c\
+check_map.c check_map_utils.c\
 
 OBJECT = $(SRC:.c=.o)
 
