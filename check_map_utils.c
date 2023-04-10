@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 17:27:19 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/05 17:28:30 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/10 19:32:45 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,45 @@ void	get_height_weight(char **map, t_list *game)
 		h_counter++;
 		j++;
 	}
+}
+
+int check_firts_rc(t_list *game)
+{
+	int i;
+
+	i = 0;
+	while (i < game->weight)
+	{
+		if (game->map[0][i] != '1')
+			return(0);
+		i++;
+	}
+	i = 0;
+	while (i < game->height)
+	{
+		if(game->map[i][0] != '1')
+			return(0);
+		i++;
+	}
+	return(1);
+}
+int check_last_rc(t_list *game)
+{
+	int i;
+
+	i = 0;
+	while (i < game->height)
+	{
+		if (game->map[i][game->weight - 1] != '1')
+			return(0);
+		i++;
+	}
+	i = 0;
+	while (i < game->weight)
+	{
+		if(game->map[game->height - 1][i] != '1')
+			return(0);
+		i++;
+	}
+	return(1);
 }

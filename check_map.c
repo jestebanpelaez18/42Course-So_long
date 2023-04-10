@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/08 16:53:05 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/10 19:33:04 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ static int	map_rectangular(t_list *game)
 
 static int	check_walls(t_list *game)
 {
-	
+	if(!check_firts_rc(game))
+		return(0);
+	if(!check_last_rc(game))
+		return (0);
+	return(1);
 }
 void	check_map(t_list *game)
 {
