@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 17:27:19 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/11 15:33:00 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:42:33 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	scan_char(t_list *game)
 				game->n_start++;
 			if (game->map[i][j] == 'C')
 				game->n_collect++;
+			
 			j++;
 		}
 		i++;
