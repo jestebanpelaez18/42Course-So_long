@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 17:27:19 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/10 19:32:45 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:33:00 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,43 +37,66 @@ void	get_height_weight(char **map, t_list *game)
 	}
 }
 
-int check_firts_rc(t_list *game)
+int	check_firts_rc(t_list *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < game->weight)
 	{
 		if (game->map[0][i] != '1')
-			return(0);
+			return (0);
 		i++;
 	}
 	i = 0;
 	while (i < game->height)
 	{
-		if(game->map[i][0] != '1')
-			return(0);
+		if (game->map[i][0] != '1')
+			return (0);
 		i++;
 	}
-	return(1);
+	return (1);
 }
-int check_last_rc(t_list *game)
+
+int	check_last_rc(t_list *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < game->height)
 	{
 		if (game->map[i][game->weight - 1] != '1')
-			return(0);
+			return (0);
 		i++;
 	}
 	i = 0;
 	while (i < game->weight)
 	{
-		if(game->map[game->height - 1][i] != '1')
-			return(0);
+		if (game->map[game->height - 1][i] != '1')
+			return (0);
 		i++;
 	}
-	return(1);
+	return (1);
+}
+
+void	scan_char(t_list *game)
+{
+	int i;
+	int j;
+
+	while (game->map[i] != NULL)
+	{
+		j = 0;
+		while (game->map[i][j] != '\0')
+		{
+			if (game->map[i][j] == 'E')
+				game->n_exit++;
+			if (game->map[i][j] == 'P')
+				game->n_start++;
+			if (game->map[i][j] == 'C')
+				game->n_collect++;
+			j++;
+		}
+		i++;
+	}
 }
