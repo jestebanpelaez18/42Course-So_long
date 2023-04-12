@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/12 14:54:18 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:15:17 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ static void	check_chars(t_list *game)
 {
 	if (!check_wrong_input(game))
 		error_msg("Error, find not valid character");
-// 	scan_n_char(game);
-// 	if (game->n_exit > 1 || game->n_exit == 0)
-// 		error_msg("Error, incorrect number of exits");
-// 	else if (game->n_start > 1 || game->n_start == 0)
-// 		error_msg("Error, incorrect number of starts");
-// 	else if (game->n_collect == 0)
-// 		error_msg("Error, not collectible in the map");
+	scan_n_char(game);
+	if (game->n_exit > 1 || game->n_exit == 0)
+		error_msg("Error, incorrect number of exits");
+	else if (game->n_start > 1 || game->n_start == 0)
+		error_msg("Error, incorrect number of starts");
+	else if (game->n_collect == 0)
+		error_msg("Error, not collectible in the map");
 }
 
 void	check_map(t_list *game)
