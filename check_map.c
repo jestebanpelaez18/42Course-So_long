@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/12 15:15:17 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/12 16:08:04 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ static void	check_chars(t_list *game)
 	else if (game->n_collect == 0)
 		error_msg("Error, not collectible in the map");
 }
+static int	check_path_of_map(t_list *game)
+{
+	
+}
 
 void	check_map(t_list *game)
 {
@@ -63,4 +67,6 @@ void	check_map(t_list *game)
 	if (!check_walls(game))
 		error_msg("Error, the map is not surrounded by walls");
 	check_chars(game);
+	if (!check_path_of_map(game))
+		error_msg("Error, not valid path in the map");
 }
