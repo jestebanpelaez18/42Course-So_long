@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/11 15:37:59 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/12 14:54:18 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,17 @@ static int	check_walls(t_list *game)
 	return (1);
 }
 
-static void	check_char(t_list *game)
+static void	check_chars(t_list *game)
 {
-	scan_char(game);
-	if (game->n_exit > 1 || game->n_exit == 0)
-		error_msg("Error, incorrect number of exits");
-	if (game->n_start > 1 || game->n_start == 0)
-		error_msg("Error, incorrect number of starts");
-	if (game->n_collect == 0)
-		error_msg("Error, not collectible in the map");
+	if (!check_wrong_input(game))
+		error_msg("Error, find not valid character");
+// 	scan_n_char(game);
+// 	if (game->n_exit > 1 || game->n_exit == 0)
+// 		error_msg("Error, incorrect number of exits");
+// 	else if (game->n_start > 1 || game->n_start == 0)
+// 		error_msg("Error, incorrect number of starts");
+// 	else if (game->n_collect == 0)
+// 		error_msg("Error, not collectible in the map");
 }
 
 void	check_map(t_list *game)
@@ -60,5 +62,5 @@ void	check_map(t_list *game)
 		error_msg("Error,the map is not rectangular");
 	if (!check_walls(game))
 		error_msg("Error, the map is not surrounded by walls");
-	check_char(game);
+	check_chars(game);
 }

@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 17:27:19 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/11 15:42:33 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:12:57 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,10 @@ int	check_last_rc(t_list *game)
 	return (1);
 }
 
-void	scan_char(t_list *game)
+void	scan_n_char(t_list *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	while (game->map[i] != NULL)
 	{
@@ -95,9 +95,31 @@ void	scan_char(t_list *game)
 				game->n_start++;
 			if (game->map[i][j] == 'C')
 				game->n_collect++;
-			
 			j++;
 		}
 		i++;
 	}
+}
+
+int	check_wrong_input(t_list *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (game->map[i] != NULL)
+	{
+		j = 0;
+		while (game->map[i][j] != '\0')
+		{
+			if (game->map[i][j] == 'C' || game->map[i][j] == '1'
+				|| game->map[i][j] == '0' || game->map[i][j] == 'E'
+				|| game->map[i][j] == 'P')
+				j++;
+			else
+				return (0);
+		}
+		i++;
+	}
+	return (1);
 }
