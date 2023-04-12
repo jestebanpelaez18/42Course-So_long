@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/12 14:46:12 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/12 16:54:47 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_list
 	int		n_exit;
 	int		n_start;
 	int		n_collect;
+	int		s_x;
+	int		s_y;
 	char	**map;
 	char	wall;
 }			t_list;
@@ -45,5 +47,6 @@ void		free_argt(char **argument);
 void		check_map(t_list *game);
 void		get_height_weight(char **map, t_list *game);
 void		scan_n_char(t_list *game);
+void		start_position(t_list *game);
 
 #endif
