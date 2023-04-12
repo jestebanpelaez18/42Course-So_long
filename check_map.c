@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/12 16:58:14 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:11:28 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,10 @@ static void	check_chars(t_list *game)
 
 static int	check_path_of_map(t_list *game, int x, int y)
 {
-	
+	if (game->map[x + 1][y + 1] == '0' && game->map[x - 1][y - 1] == '0')
+		// check_path_of_map()
 }
+
 
 void	check_map(t_list *game)
 {
