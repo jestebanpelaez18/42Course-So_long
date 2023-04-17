@@ -6,14 +6,14 @@
 #    By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:34:21 by jpelaez-          #+#    #+#              #
-#    Updated: 2023/04/05 17:05:23 by jpelaez-         ###   ########.fr        #
+#    Updated: 2023/04/17 14:30:17 by jpelaez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long 
 
 SRC = main.c init_map.c utils.c error.c\
-check_map.c check_map_utils.c\
+check_map.c check_map_utils.c check_map_utils_2.c\
 
 OBJECT = $(SRC:.c=.o)
 
@@ -24,8 +24,8 @@ GNL_DIR = ./get_next_line
 GNL = $(GNL_DIR)/get_next_line.c
 GNL_UTILS = $(GNL_DIR)/get_next_line_utils.c
 
-# MINLBX_DIR = ./minilibx
-# MINLBX = $(MINLBX_DIR)/libmlx.a
+MINLBX_DIR = ./minilibx
+MINLBX = $(MINLBX_DIR)/libmlx.a
 
 HEADER = so_long.h
 LIBFT_HEADER = ./libft/libft.h
@@ -33,14 +33,14 @@ LIBFT_HEADER = ./libft/libft.h
 FLAGS = -Wall -Wextra -Werror 
 IFLAGS = -I $(HEADER) 
 
-# LIBX = -Lmlx -lmlx -framework OpenGL -framework AppKit
+LIBX = -Lmlx -lmlx -framework OpenGL -framework AppKit
 CC = CC 
 
 all: $(NAME) 
 
 $(NAME):  $(OBJECT) 
 		make -C $(LIBFT_DIR)
-		$(CC) $(FLAGS) $(IFLAGS) $(OBJECT) $(GNL) $(GNL_UTILS) $(LIBFT) -o $(NAME) 
+		$(CC) $(FLAGS) $(IFLAGS) $(OBJECT) $(LIBX) $(GNL) $(GNL_UTILS) $(LIBFT) -o $(NAME) 
 
 	
 clean:

@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/12 16:54:47 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/17 14:31:11 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "get_next_line/get_next_line.h"
 # include "libft/libft.h"
-# include "minilibx/mlx.h"
+# include "mlx/mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
