@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/17 14:25:38 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:50:17 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ static void	check_chars(t_list *game)
 // 		// check_path_of_map()
 // }
 
-
 void	check_map(t_list *game)
 {
 	if (game->map == NULL)
@@ -70,7 +69,7 @@ void	check_map(t_list *game)
 	if (!check_walls(game))
 		error_msg("Error, the map is not surrounded by walls");
 	check_chars(game);
-	start_position(game);
+	// start_position(game);
 	// if (!check_path_of_map(game, game->s_x, game->s_y))
 	// 	error_msg("Error, not valid path in the map");
 }

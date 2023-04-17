@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   start_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 14:53:11 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/17 15:48:33 by jpelaez-         ###   ########.fr       */
+/*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
+/*   Updated: 2023/04/17 15:49:13 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	main(int argc, char **argv)
+void	start_game(t_list *game)
 {
-	t_list	game;
-
-	if (argc < 2)
-		error_msg("Error, number of arguments invalid");
-	init_map(&game, argc, argv);
-	check_map(&game);
-	start_game(&game);
-	return (0);
+	game->mlx = mlx_init();
+	game->win = mlx_new_window(game->mlx, 1920, 1080, "So Long Juanes");
+	mlx_loop(game->mlx);
 }

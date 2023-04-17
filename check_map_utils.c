@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 17:27:19 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/12 15:14:56 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:12:13 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ void	scan_n_char(t_list *game)
 	int	j;
 
 	i = 0;
+	game->n_exit = 0;
+	game->n_start = 0;
+	game->n_collect = 0;
 	while (game->map[i] != NULL)
 	{
 		j = 0;

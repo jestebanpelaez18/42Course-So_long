@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/17 14:31:11 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:48:50 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "get_next_line/get_next_line.h"
 # include "libft/libft.h"
-# include "mlx/mlx.h"
+# include "mlx.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -33,6 +33,8 @@ typedef struct s_list
 	int		s_y;
 	char	**map;
 	char	wall;
+	void	*mlx;
+	void	*win;
 }			t_list;
 
 int			ft_strstr(char *big, char *little);
@@ -48,5 +50,6 @@ void		check_map(t_list *game);
 void		get_height_weight(char **map, t_list *game);
 void		scan_n_char(t_list *game);
 void		start_position(t_list *game);
+void			start_game(t_list *game);
 
 #endif
