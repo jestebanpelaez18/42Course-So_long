@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/17 18:20:41 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:46:15 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_list
 	void	*mlx;
 	void	*win;
 	void	*collect;
+	void	*water;
 }			t_list;
 
 int			ft_strstr(char *big, char *little);
