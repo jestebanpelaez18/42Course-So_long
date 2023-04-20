@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/18 18:17:20 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:44:01 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,29 @@ static void	put_image(t_list *game)
 		j = 0;
 		while (game->map[i][j] != '\0')
 		{
-			// if (game->map[x_axis][y_axis] == 'C')
-			// 	mlx_put_image_to_window(game->mlx, game->win, game->collect,
-			// 		x_axis, y_axis);
 			if (game->map[i][j] == '1')
 				mlx_put_image_to_window(game->mlx, game->win, game->water,
-						x_axis, y_axis);
+					x_axis, y_axis);
+			if (game->map[i][j] == '0')
+				mlx_put_image_to_window(game->mlx, game->win, game->grass,
+					x_axis, y_axis);
+			if (game->map[i][j] == 'E')
+				mlx_put_image_to_window(game->mlx, game->win, game->exit,
+					x_axis, y_axis);
+			if (game->map[i][j] == 'C')
+			{
+				mlx_put_image_to_window(game->mlx, game->win, game->grass,
+					x_axis, y_axis);
+				mlx_put_image_to_window(game->mlx, game->win, game->collect,
+					x_axis, y_axis);
+			}
+			if (game->map[i][j] == 'P')
+			{
+				mlx_put_image_to_window(game->mlx, game->win, game->grass,
+					x_axis, y_axis);
+				mlx_put_image_to_window(game->mlx, game->win, game->player,
+					x_axis, y_axis);
+			}
 			y_axis += 120;
 			j++;
 		}
@@ -46,10 +63,16 @@ static void	set_image(t_list *game)
 	int	img_width;
 	int	img_height;
 
-	game->collect = mlx_xpm_file_to_image(game->mlx, "img/nenemy.xpm",
+	game->collect = mlx_xpm_file_to_image(game->mlx, "img/master.xpm",
+			&img_width, &img_height);
+	game->player = mlx_xpm_file_to_image(game->mlx, "img/2player.xpm",
 			&img_width, &img_height);
 	game->water = mlx_xpm_file_to_image(game->mlx, "img/wwall.xpm", &img_width,
 			&img_height);
+	game->grass = mlx_xpm_file_to_image(game->mlx, "img/freegrass.xpm",
+			&img_width, &img_height);
+	game->exit = mlx_xpm_file_to_image(game->mlx, "img/hueco.xpm",
+			&img_width, &img_height);
 }
 
 void	start_game(t_list *game)
