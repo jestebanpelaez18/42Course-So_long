@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/21 18:12:24 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/21 18:18:18 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,16 @@ static int	keys(int key_code, t_list *game)
 	{
 		free_argt(game->map);
 		mlx_destroy_window(game->mlx, game->win);
-		exit(1);
+		exit(0);
 	}
-	return(0);
+	return (0);
+}
+
+static int	close(int key_code, t_list *game)
+{
+	free_argt(game->map);
+	mlx_destroy_window(game->mlx, game->win);
+	return (0);
 }
 
 void	start_game(t_list *game)
@@ -102,5 +109,6 @@ void	start_game(t_list *game)
 	set_image(game);
 	put_image(game);
 	mlx_hook(game->win, 2, 1L << 0, keys, game);
+	mlx_hook(game->win, 17, 1L << 0, close, game);
 	mlx_loop(game->mlx);
 }
