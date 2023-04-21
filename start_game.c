@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/20 18:44:01 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/21 17:42:35 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,10 @@ static void	set_image(t_list *game)
 	game->exit = mlx_xpm_file_to_image(game->mlx, "img/hueco.xpm",
 			&img_width, &img_height);
 }
-
+static int keys(int key_code, t_list *game)
+{
+	
+}
 void	start_game(t_list *game)
 {
 	game->mlx = mlx_init();
@@ -82,5 +85,6 @@ void	start_game(t_list *game)
 			* 120, "So Long Juanes");
 	set_image(game);
 	put_image(game);
+	mlx_hook(game->win, 2 , 1L<<0, keys, game);
 	mlx_loop(game->mlx);
 }
