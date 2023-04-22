@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/21 18:18:18 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/22 18:33:29 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static int	keys(int key_code, t_list *game)
 		left(game);
 	else if (key_code == 1 || key_code = 125)
 		down(game);
-	else if (key_code == 1 || key_code = 126)
+	else if (key_code == 13 || key_code = 126)
 		up(game);
 	else if (key_code == 53)
 	{
