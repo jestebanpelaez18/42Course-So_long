@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/22 18:33:29 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/22 19:13:45 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ static void	put_image(t_list *game)
 						x_axis, y_axis);
 				mlx_put_image_to_window(game->mlx, game->win, game->player,
 						x_axis, y_axis);
+				game->p_x;
+				game->p_y;
 			}
 			y_axis += 120;
 			j++;
