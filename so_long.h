@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/22 19:13:59 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:43:12 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void		get_height_weight(char **map, t_list *game);
 void		scan_n_char(t_list *game);
 void		start_position(t_list *game);
 void		start_game(t_list *game);
+void		exit_game(t_list *game);
 
 #endif

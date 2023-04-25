@@ -6,13 +6,13 @@
 #    By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:34:21 by jpelaez-          #+#    #+#              #
-#    Updated: 2023/04/17 15:37:21 by jpelaez-         ###   ########.fr        #
+#    Updated: 2023/04/24 17:43:13 by jpelaez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long 
 
-SRC = main.c init_map.c utils.c error.c\
+SRC = main.c init_map.c utils.c error_exit.c\
 check_map.c check_map_utils.c check_map_utils_2.c\
 start_game.c\
 

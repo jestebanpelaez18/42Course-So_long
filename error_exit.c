@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   error_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:23:08 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/04 15:09:27 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:37:05 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,11 @@ void	free_argt(char **argument)
 		i++;
 	}
 	free(argument);
+}
+
+void	exit_game(t_list *game)
+{
+	free_argt(game->map);
+	mlx_destroy_window(game->mlx, game->win);
+	exit(0);
 }

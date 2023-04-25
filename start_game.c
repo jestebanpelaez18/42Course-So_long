@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/22 19:13:45 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:29:00 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ static void	set_image(t_list *game)
 static int	keys(int key_code, t_list *game)
 {
 	if (key_code == 2 || key_code = 124)
-		right(game);
+		right(game,game->p_y, game->p_x);
 	else if (key_code == 0 || key_code = 123)
-		left(game);
+		left(game, game->p_y, game->p_x);
 	else if (key_code == 1 || key_code = 125)
-		down(game);
+		down(game, game->p_y, game->p_x);
 	else if (key_code == 13 || key_code = 126)
-		up(game);
+		up(game, game->p_y, game->p_x);
 	else if (key_code == 53)
 	{
 		free_argt(game->map);
