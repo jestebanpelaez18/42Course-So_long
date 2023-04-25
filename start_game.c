@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/25 16:11:24 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/25 17:06:31 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,26 @@ static void	put_image(t_list *game)
 		{
 			if (game->map[i][j] == '1')
 				mlx_put_image_to_window(game->mlx, game->win, game->water,
-						x_axis , y_axis);
+						y_axis , x_axis);
 			if (game->map[i][j] == '0')
 				mlx_put_image_to_window(game->mlx, game->win, game->grass,
-						x_axis, y_axis);
+						y_axis, x_axis);
 			if (game->map[i][j] == 'E')
 				mlx_put_image_to_window(game->mlx, game->win, game->exit,
-						x_axis, y_axis);
+						y_axis, x_axis);
 			if (game->map[i][j] == 'C')
 			{
 				mlx_put_image_to_window(game->mlx, game->win, game->grass,
-						x_axis, y_axis);
+						y_axis, x_axis);
 				mlx_put_image_to_window(game->mlx, game->win, game->collect,
-						x_axis, y_axis);
+						y_axis, x_axis);
 			}
 			if (game->map[i][j] == 'P')
 			{
 				mlx_put_image_to_window(game->mlx, game->win, game->grass,
-						x_axis, y_axis);
+						y_axis, x_axis);
 				mlx_put_image_to_window(game->mlx, game->win, game->player,
-						x_axis, y_axis);
+						y_axis, x_axis);
 				game->p_x = x_axis;
 				game->p_y = y_axis;
 			}
