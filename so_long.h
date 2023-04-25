@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/24 17:43:12 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/25 14:18:55 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,9 @@ void		scan_n_char(t_list *game);
 void		start_position(t_list *game);
 void		start_game(t_list *game);
 void		exit_game(t_list *game);
+void		right(t_list *game, int y, int x);
+void		left(t_list *game, int y, int x);
+void		down(t_list *game, int y, int x);
+void		up(t_list *game, int y, int x);
 
 #endif
