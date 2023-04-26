@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/25 14:18:55 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:57:18 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_list
 	int		s_y;
 	int		p_x;
 	int		p_y;
+	int		moves;
 	char	**map;
 	char	wall;
 	void	*mlx;

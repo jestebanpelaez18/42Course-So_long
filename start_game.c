@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/26 16:19:08 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:03:52 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	put_image(t_list *game)
 		{
 			if (game->map[i][j] == '1')
 				mlx_put_image_to_window(game->mlx, game->win, game->water,
-						y_axis , x_axis);
+						y_axis, x_axis);
 			if (game->map[i][j] == '0')
 				mlx_put_image_to_window(game->mlx, game->win, game->grass,
 						y_axis, x_axis);
@@ -112,5 +112,6 @@ void	start_game(t_list *game)
 	put_image(game);
 	mlx_hook(game->win, 2, 1L << 0, keys, game);
 	mlx_hook(game->win, 17, 0, close_game, game);
+	// mlx_string_put(game->mlx, game->win, 0, 0, 0x008000, ft_itoa(game->moves));
 	mlx_loop(game->mlx);
 }
