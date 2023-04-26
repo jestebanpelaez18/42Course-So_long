@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 18:45:02 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/26 15:46:20 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:00:37 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static void	check_collect(t_list *game, int y, int x)
 
 void	right(t_list *game, int y, int x)
 {
-	mlx_put_image_to_window(game->mlx, game->win, game->grass, x, y);
+	if (game->map[(y / 64)][(x / 64) + 1] != '1')
+		mlx_put_image_to_window(game->mlx, game->win, game->grass, x, y);
 	if (game->map[y / 64][(x / 64) + 1] == 'E')
 	{
 		if (game->n_collect == 0)
@@ -35,13 +36,14 @@ void	right(t_list *game, int y, int x)
 			check_collect(game, y, game->p_x);
 			game->map[y / 64][(x / 64) + 1] = '0';
 		}
+		mlx_put_image_to_window(game->mlx, game->win, game->player, x + 64, y);
 	}
-	mlx_put_image_to_window(game->mlx, game->win, game->player, x + 64, y);
 }
 
 void	left(t_list *game, int y, int x)
 {
-	mlx_put_image_to_window(game->mlx, game->win, game->grass, x, y);
+	if (game->map[(y / 64)][(x / 64) - 1] != '1')
+		mlx_put_image_to_window(game->mlx, game->win, game->grass, x, y);
 	if (game->map[y / 64][(x / 64) - 1] == 'E')
 	{
 		if (game->n_collect == 0)
@@ -55,13 +57,14 @@ void	left(t_list *game, int y, int x)
 			check_collect(game, y, game->p_x);
 			game->map[y / 64][(x / 64) - 1] = '0';
 		}
+		mlx_put_image_to_window(game->mlx, game->win, game->player, x - 64, y);
 	}
-	mlx_put_image_to_window(game->mlx, game->win, game->player, x - 64, y);
 }
 
 void	up(t_list *game, int y, int x)
 {
-	mlx_put_image_to_window(game->mlx, game->win, game->grass, x, y);
+	if (game->map[(y / 64) - 1][x / 64] != '1')
+		mlx_put_image_to_window(game->mlx, game->win, game->grass, x, y);
 	if (game->map[(y / 64) - 1][x / 64] == 'E')
 	{
 		if (game->n_collect == 0)
@@ -75,13 +78,14 @@ void	up(t_list *game, int y, int x)
 			check_collect(game, game->p_y, x);
 			game->map[(y / 64) - 1][x / 64] = '0';
 		}
+		mlx_put_image_to_window(game->mlx, game->win, game->player, x, y - 64);
 	}
-	mlx_put_image_to_window(game->mlx, game->win, game->player, x, y - 64);
 }
 
 void	down(t_list *game, int y, int x)
 {
-	mlx_put_image_to_window(game->mlx, game->win, game->grass, x, y);
+	if (game->map[(y / 64) + 1][x / 64] != '1')
+		mlx_put_image_to_window(game->mlx, game->win, game->grass, x, y);
 	if (game->map[(y / 64) + 1][x / 64] == 'E')
 	{
 		if (game->n_collect == 0)
@@ -95,6 +99,6 @@ void	down(t_list *game, int y, int x)
 			check_collect(game, game->p_y, x);
 			game->map[(y / 64) + 1][x / 64] = '0';
 		}
+		mlx_put_image_to_window(game->mlx, game->win, game->player, x, y + 64);
 	}
-	mlx_put_image_to_window(game->mlx, game->win, game->player, x, y + 64);
 }
