@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:23:08 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/24 17:37:05 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:18:24 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,13 @@ void	free_argt(char **argument)
 }
 
 void	exit_game(t_list *game)
+{
+	free_argt(game->map);
+	mlx_destroy_window(game->mlx, game->win);
+	exit(0);
+}
+
+int	close_game(t_list *game)
 {
 	free_argt(game->map);
 	mlx_destroy_window(game->mlx, game->win);

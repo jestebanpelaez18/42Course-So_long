@@ -6,11 +6,33 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/26 17:03:52 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:18:51 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	image_components(t_list *game, char map_com, int x, int y)
+{
+	if (map_com == '1')
+		mlx_put_image_to_window(game->mlx, game->win, game->water, y, x);
+	if (map_com == '0')
+		mlx_put_image_to_window(game->mlx, game->win, game->grass, y, x);
+	if (map_com == 'E')
+		mlx_put_image_to_window(game->mlx, game->win, game->exit, y, x);
+	if (map_com == 'C')
+	{
+		mlx_put_image_to_window(game->mlx, game->win, game->grass, y, x);
+		mlx_put_image_to_window(game->mlx, game->win, game->collect, y, x);
+	}
+	if (map_com == 'P')
+	{
+		mlx_put_image_to_window(game->mlx, game->win, game->grass, y, x);
+		mlx_put_image_to_window(game->mlx, game->win, game->player, y, x);
+		game->p_x = x;
+		game->p_y = y;
+	}
+}
 
 static void	put_image(t_list *game)
 {
@@ -27,31 +49,7 @@ static void	put_image(t_list *game)
 		j = 0;
 		while (game->map[i][j] != '\0')
 		{
-			if (game->map[i][j] == '1')
-				mlx_put_image_to_window(game->mlx, game->win, game->water,
-						y_axis, x_axis);
-			if (game->map[i][j] == '0')
-				mlx_put_image_to_window(game->mlx, game->win, game->grass,
-						y_axis, x_axis);
-			if (game->map[i][j] == 'E')
-				mlx_put_image_to_window(game->mlx, game->win, game->exit,
-						y_axis, x_axis);
-			if (game->map[i][j] == 'C')
-			{
-				mlx_put_image_to_window(game->mlx, game->win, game->grass,
-						y_axis, x_axis);
-				mlx_put_image_to_window(game->mlx, game->win, game->collect,
-						y_axis, x_axis);
-			}
-			if (game->map[i][j] == 'P')
-			{
-				mlx_put_image_to_window(game->mlx, game->win, game->grass,
-						y_axis, x_axis);
-				mlx_put_image_to_window(game->mlx, game->win, game->player,
-						y_axis, x_axis);
-				game->p_x = x_axis;
-				game->p_y = y_axis;
-			}
+			image_components(game, game->map[i][j], x_axis, y_axis);
 			y_axis += 64;
 			j++;
 		}
@@ -96,13 +94,6 @@ static int	keys(int key_code, t_list *game)
 	return (0);
 }
 
-static int	close_game(t_list *game)
-{
-	free_argt(game->map);
-	mlx_destroy_window(game->mlx, game->win);
-	exit(0);
-}
-
 void	start_game(t_list *game)
 {
 	game->mlx = mlx_init();
@@ -112,6 +103,5 @@ void	start_game(t_list *game)
 	put_image(game);
 	mlx_hook(game->win, 2, 1L << 0, keys, game);
 	mlx_hook(game->win, 17, 0, close_game, game);
-	// mlx_string_put(game->mlx, game->win, 0, 0, 0x008000, ft_itoa(game->moves));
 	mlx_loop(game->mlx);
 }
