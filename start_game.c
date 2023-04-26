@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/25 17:06:31 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/26 15:36:28 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ static int	close_game(int key_code, t_list *game)
 void	start_game(t_list *game)
 {
 	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, (game->height) * 64, (game->weight)
+	game->win = mlx_new_window(game->mlx, (game->weight) * 64, (game->height)
 			* 64, "So Long Juanes");
 	set_image(game);
 	put_image(game);
