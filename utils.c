@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 16:40:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/27 14:09:41 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:39:52 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ int	ft_strstr(char *big, char *little)
 				j++;
 			}
 			if (little[j] == '\0')
-				return (1);
+				break ;
 		}
 		big++;
 		i++;
 	}
+	if (little[j] == '\0' && big[j] == '\0')
+		return (1);
 	return (0);
 }
