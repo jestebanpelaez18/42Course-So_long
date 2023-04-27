@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/26 18:18:42 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:24:03 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void		init_map(t_list *game, int argc, char **argv);
 void		error_msg(char *msg);
 void		free_argt(char **argument);
 void		check_map(t_list *game);
-void		get_height_weight(char **map, t_list *game);
+void		get_height_weight(t_list *game);
 void		scan_n_char(t_list *game);
 void		start_position(t_list *game);
 void		start_game(t_list *game);
@@ -65,5 +65,7 @@ void		right(t_list *game, int y, int x);
 void		left(t_list *game, int y, int x);
 void		down(t_list *game, int y, int x);
 void		up(t_list *game, int y, int x);
+
+char		*ft_strjoin2(char *s1, char *s2);
 
 #endif

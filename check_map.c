@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/17 15:50:17 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:14:32 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	check_map(t_list *game)
 {
 	if (game->map == NULL)
 		error_msg("Error, empty map");
-	get_height_weight(game->map, game);
+	get_height_weight(game);
 	if (!map_rectangular(game))
 		error_msg("Error,the map is not rectangular");
 	if (!check_walls(game))
