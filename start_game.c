@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 14:34:30 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/26 18:18:51 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/27 13:36:23 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static void	image_components(t_list *game, char map_com, int x, int y)
 	{
 		mlx_put_image_to_window(game->mlx, game->win, game->grass, y, x);
 		mlx_put_image_to_window(game->mlx, game->win, game->player, y, x);
-		game->p_x = x;
-		game->p_y = y;
+		game->p_x = y;
+		game->p_y = x;
 	}
 }
 
