@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/27 15:14:32 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:55:45 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,27 @@ static void	check_chars(t_list *game)
 		error_msg("Error, not collectible in the map");
 }
 
-// static int	check_path_of_map(t_list *game, int x, int y)
-// {
-// 	if (game->map[x + 1][y + 1] == '0' && game->map[x - 1][y - 1] == '0')
-// 		// check_path_of_map()
-// }
+static int	check_path(t_list *game, char **map, int x, int y)
+{
+	static int	exit = 0;
+	static int	collect = 0;
+
+	if (map[x][y] == 'E')
+		exit = 1;
+	else if (map[x][y] == 'C')
+		collect--;
+	else if (map[x][y] == '1')
+		return (0);
+	map[x][y] = '1';
+	check_path(game, x + 1, y))
+		sit 
+	check_path(game, x - 1, y))
+		sit = 0;
+	check_path(game, x, y + 1))
+		sit = 0;
+	check_path(game, x, y - 1)
+	return (sit);
+}
 
 void	check_map(t_list *game)
 {
@@ -69,7 +85,7 @@ void	check_map(t_list *game)
 	if (!check_walls(game))
 		error_msg("Error, the map is not surrounded by walls");
 	check_chars(game);
-	// start_position(game);
-	// if (!check_path_of_map(game, game->s_x, game->s_y))
-	// 	error_msg("Error, not valid path in the map");
+	start_position(game);
+	if (!check_path(game ,game->map, game->s_x, game->s_y))
+		error_msg("Error, not valid path in the map");
 }
