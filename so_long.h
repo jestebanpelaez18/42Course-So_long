@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/27 15:24:03 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:22:58 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ void		down(t_list *game, int y, int x);
 void		up(t_list *game, int y, int x);
 
 char		*ft_strjoin2(char *s1, char *s2);
+char		**copy_map(char **node, int row, int col);
 
 #endif

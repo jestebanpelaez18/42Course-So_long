@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/02 13:00:54 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:43:16 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,20 @@ static int	check_path(t_list *game, char **map, int x, int y)
 	else if (map[x][y] == '1')
 		return (0);
 	map[x][y] = '1';
-	check_path(game, ,game->map, x + 1, y);
-	check_path(game, game->map, x - 1, y);
-	check_path(game, game->map, x, y + 1);
-	check_path(game, game->map, x, y - 1);
-	if(collect == game->n_collect && exit == 1);
+	check_path(game, map, x + 1, y);
+	check_path(game, map, x - 1, y);
+	check_path(game, map, x, y + 1);
+	check_path(game, map, x, y - 1);
+	if (collect == game->n_collect && exit == 1)
 		return (1);
-	return(0);
+	else
+		return (0);
 }
 
 void	check_map(t_list *game)
 {
+	char	**temp_map;
+
 	if (game->map == NULL)
 		error_msg("Error, empty map");
 	get_height_weight(game);
@@ -85,6 +88,8 @@ void	check_map(t_list *game)
 		error_msg("Error, the map is not surrounded by walls");
 	check_chars(game);
 	start_position(game);
-	if (!check_path(game ,game->map, game->s_x, game->s_y))
+	temp_map = copy_map(game->map, game->weight, game->height);
+	if (!check_path(game, temp_map, game->s_x, game->s_y))
 		error_msg("Error, not valid path in the map");
+	free_argt(temp_map);
 }

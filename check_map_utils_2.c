@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:51:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/28 15:47:02 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:37:55 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,27 @@ void	start_position(t_list *game)
 		}
 		i++;
 	}
+}
+
+char	**copy_map(char **node, int row, int col)
+{
+	char	**s2;
+	int		i;
+	int		j;
+
+	s2 = malloc(sizeof(char *) * (row + 1));
+	i = 0;
+	while (node[i] != NULL)
+	{
+		s2[i] = malloc(sizeof(char) * (col));
+		j = 0;
+		while (node[i][j] != '\0')
+		{
+			s2[i][j] = node[i][j];
+			j++;
+		}
+		s2[i][j] = '\0';
+		i++;
+	}
+	return (s2);
 }
