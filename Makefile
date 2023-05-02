@@ -6,7 +6,7 @@
 #    By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:34:21 by jpelaez-          #+#    #+#              #
-#    Updated: 2023/04/25 14:51:24 by jpelaez-         ###   ########.fr        #
+#    Updated: 2023/05/02 17:45:17 by jpelaez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ all: $(NAME)
 
 $(NAME):  $(OBJECT) 
 		make -C $(LIBFT_DIR)
-		$(CC) $(FLAGS) $(IFLAGS) $(OBJECT) $(LIBX) $(GNL) $(GNL_UTILS) $(LIBFT) -o $(NAME) 
+		$(CC) $(FLAGS) $(IFLAGS) $(OBJECT) $(LIBX) $(GNL) $(GNL_UTILS) $(LIBFT) -g -o $(NAME) 
 
 	
 clean:

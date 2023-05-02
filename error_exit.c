@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:23:08 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:26:40 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:03:20 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	free_argt(char **argument)
 	int	i;
 
 	i = 0;
+	if (!argument)
+		return ;
 	while (argument[i])
 	{
 		free(argument[i]);
