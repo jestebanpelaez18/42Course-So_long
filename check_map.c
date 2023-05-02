@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/28 17:55:45 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/02 13:00:54 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,17 @@ static int	check_path(t_list *game, char **map, int x, int y)
 	if (map[x][y] == 'E')
 		exit = 1;
 	else if (map[x][y] == 'C')
-		collect--;
+		collect++;
 	else if (map[x][y] == '1')
 		return (0);
 	map[x][y] = '1';
-	check_path(game, x + 1, y))
-		sit 
-	check_path(game, x - 1, y))
-		sit = 0;
-	check_path(game, x, y + 1))
-		sit = 0;
-	check_path(game, x, y - 1)
-	return (sit);
+	check_path(game, ,game->map, x + 1, y);
+	check_path(game, game->map, x - 1, y);
+	check_path(game, game->map, x, y + 1);
+	check_path(game, game->map, x, y - 1);
+	if(collect == game->n_collect && exit == 1);
+		return (1);
+	return(0);
 }
 
 void	check_map(t_list *game)
