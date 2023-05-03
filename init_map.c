@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:11:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/03 16:12:13 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:13:50 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,29 @@ static char	**read_map(t_list *game, char *file)
 	free(line);
 	close(game->fd);
 	final_map = ft_split(full_map, '\n');
-	free(full_map);
+	if (!final_map[0])
+		free_argt_exit(final_map);
 	return (final_map);
+}
+
+static int	n_rows(t_list *game, char *file)
+{
+	int		rows;
+	char	*line;
+
+	game->fd = open(file, O_RDONLY);
+	if (game->fd == -1)
+		error_msg("Error fd");
+	rows = 0;
+	line = get_next_line(game->fd);
+	while (line)
+	{
+		rows++;
+		free(line);
+		line = get_next_line(game->fd);
+	}
+	close(game->fd);
+	return (rows);
 }
 
 void	init_map(t_list *game, int argc, char **argv)
@@ -51,4 +72,5 @@ void	init_map(t_list *game, int argc, char **argv)
 		error_msg("Error, invalid file format");
 	game->map = read_map(game, argv[1]);
 	game->temp_map = read_map(game, argv[1]);
+	game->n_rows = n_rows(game, argv[1]);
 }

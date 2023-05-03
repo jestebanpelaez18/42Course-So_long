@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:51:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/03 15:30:44 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:32:39 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,8 @@ char	**copy_map(char **node, int row, int col)
 	}
 	return (s2);
 }
+
+// int	player_position(t_list *game, char **map, int x, int y)
+// {
+	
+// }

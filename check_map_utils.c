@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 17:27:19 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/27 15:14:22 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:39:56 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	check_wrong_input(t_list *game)
 	int	j;
 
 	i = 0;
-	while (game->map[i] != NULL)
+	while (i < game->height)
 	{
 		j = 0;
 		while (game->map[i][j] != '\0')

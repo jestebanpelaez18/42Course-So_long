@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/03 16:19:02 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:35:33 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	map_rectangular(t_list *game)
 
 	i = 0;
 	j = 0;
-	while (game->map[i] != NULL)
+	while (i < game->height)
 	{
 		j = 0;
 		while (game->map[i][j] != '\0')
@@ -28,6 +28,8 @@ static int	map_rectangular(t_list *game)
 			return (0);
 		i++;
 	}
+	if (game->n_rows > game->height)
+		return (0);
 	return (1);
 }
 
@@ -86,6 +88,8 @@ void	check_map(t_list *game)
 		error_msg("Error, the map is not surrounded by walls");
 	check_chars(game);
 	start_position(game);
+	// if (!player_position(game, game->temp_map, game->s_x, game->s_y))
+	// 	error_msg("Error, player position not valid");
 	if (!check_path(game, game->temp_map, game->s_x, game->s_y))
 		error_msg("Error, not valid path in the map");
 	free_argt(game->temp_map);
