@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:11:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/04/27 15:27:19 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:12:13 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void	init_map(t_list *game, int argc, char **argv)
 	if (!check_file(argc, argv))
 		error_msg("Error, invalid file format");
 	game->map = read_map(game, argv[1]);
+	game->temp_map = read_map(game, argv[1]);
 }

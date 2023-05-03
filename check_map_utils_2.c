@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:51:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/02 18:05:39 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:30:44 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,21 @@ char	**copy_map(char **node, int row, int col)
 	int		j;
 
 	s2 = malloc(sizeof(char *) * (row + 1));
-	if (s2 == NULL)
+	if (!s2)
 		error_msg("Not allocated");
 	i = 0;
 	while (i < row)
 	{
-		s2[i] = ft_strdup(node[i]);
-		if (s2[i] == NULL)
+		s2[i] = malloc(sizeof(char) * (col + 1));
+		if (!s2[i])
 			error_msg("Not allocated");
+		j = 0;
+		while (j < col)
+		{
+			s2[i][j] = node[i][j];
+			j++;
+		}
+		s2[i][j] = '\0';
 		i++;
 	}
 	return (s2);

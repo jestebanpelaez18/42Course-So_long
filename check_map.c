@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:53:01 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/02 17:46:52 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:19:02 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ static int	check_path(t_list *game, char **map, int x, int y)
 
 void	check_map(t_list *game)
 {
-	char	**temp_map;
-
 	if (game->map == NULL)
 		error_msg("Error, empty map");
 	get_height_weight(game);
@@ -88,8 +86,7 @@ void	check_map(t_list *game)
 		error_msg("Error, the map is not surrounded by walls");
 	check_chars(game);
 	start_position(game);
-	temp_map = copy_map(game->map, game->height, game->weight);
-	if (!check_path(game, temp_map, game->s_x, game->s_y))
+	if (!check_path(game, game->temp_map, game->s_x, game->s_y))
 		error_msg("Error, not valid path in the map");
-	free_argt(temp_map);
+	free_argt(game->temp_map);
 }
