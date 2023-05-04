@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:51:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/03 19:32:39 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:56:09 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,35 +34,3 @@ void	start_position(t_list *game)
 		i++;
 	}
 }
-
-char	**copy_map(char **node, int row, int col)
-{
-	char	**s2;
-	int		i;
-	int		j;
-
-	s2 = malloc(sizeof(char *) * (row + 1));
-	if (!s2)
-		error_msg("Not allocated");
-	i = 0;
-	while (i < row)
-	{
-		s2[i] = malloc(sizeof(char) * (col + 1));
-		if (!s2[i])
-			error_msg("Not allocated");
-		j = 0;
-		while (j < col)
-		{
-			s2[i][j] = node[i][j];
-			j++;
-		}
-		s2[i][j] = '\0';
-		i++;
-	}
-	return (s2);
-}
-
-// int	player_position(t_list *game, char **map, int x, int y)
-// {
-	
-// }

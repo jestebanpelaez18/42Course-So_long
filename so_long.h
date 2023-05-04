@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 16:52:43 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/03 19:20:11 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/04 12:43:45 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int			check_firts_rc(t_list *game);
 int			check_last_rc(t_list *game);
 int			check_wrong_input(t_list *game);
 int			close_game(t_list *game);
-int			player_position(t_list *game, char **map, int x, int y);
 
 void		init_map(t_list *game, int argc, char **argv);
 void		error_msg(char *msg);

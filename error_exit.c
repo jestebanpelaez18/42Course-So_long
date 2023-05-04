@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:23:08 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/03 16:58:44 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/04 13:04:03 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	free_argt(char **argument)
 	int	i;
 
 	i = 0;
-	if (!argument)
-		return ;
 	while (argument[i])
 	{
 		free(argument[i]);
@@ -51,5 +49,5 @@ int	close_game(t_list *game)
 void	free_argt_exit(char **argument)
 {
 	free_argt(argument);
-	error_msg("empty map");
+	error_msg("Error, empty map");
 }

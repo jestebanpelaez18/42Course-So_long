@@ -6,7 +6,7 @@
 /*   By: jpelaez- <jpelaez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:11:55 by jpelaez-          #+#    #+#             */
-/*   Updated: 2023/05/03 19:13:50 by jpelaez-         ###   ########.fr       */
+/*   Updated: 2023/05/04 13:05:53 by jpelaez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ static char	**read_map(t_list *game, char *file)
 	final_map = ft_split(full_map, '\n');
 	if (!final_map[0])
 		free_argt_exit(final_map);
+	free(full_map);
 	return (final_map);
 }
 
